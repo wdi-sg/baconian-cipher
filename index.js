@@ -7,7 +7,7 @@ for(var b = 2; b < process.argv.length; b++){
 	for(var i = 0; i < inputWord.length ; i++){
 		preCodeWord += inputWord.charAt(i).toUpperCase() + " "
 
-		for (var a = 0; a < 25; a++){
+		for (var a = 0; a < 26; a++){
 			let codes = {
 				"A" : "aaaaa", 
 				"B" : "aaaab",
