@@ -1,5 +1,3 @@
-# baconian-cipher
-[javascript, quick, warmup]
 
 
 From: [http://practicalcryptography.com/ciphers/classical-era/baconian/](http://practicalcryptography.com/ciphers/classical-era/baconian/)
