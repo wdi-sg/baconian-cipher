@@ -36,4 +36,7 @@ Dynamically generate the letter subsitutions
 Take an argument to change the number of letters in the generated subsitution
 
 # Bonus
-Take an argument for the letters that are in the subsitution and how many of them are used
+Take an argument for which two letters that are in the subsitution 
+
+# Bonus 
+Take an argument for how many __different__ letters are used in the subsitution
