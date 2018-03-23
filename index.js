@@ -146,27 +146,46 @@ const randomizer = (subLength,specifyL,totalLetter) =>{
 	};
 
 	for(let key in random_library){
-		let randomCombin = "";
-		for(let j=0; j<subLength; j++){
-			let randomCurr = cryptL.charAt(Math.floor(Math.random()*subLength));
-			// console.log("before: " + randomCurr);
-			if(randomCurr != ""){
-				// console.log("after: " + randomCurr);
-				randomCombin += randomCurr;
+		let currCombin = "";
+		while(true){
+			let randomCombin = "";
+			for(let j=0; j<subLength; j++){
+				let randomCurr = cryptL.charAt(Math.floor(Math.random()*subLength));
+				// console.log("before: " + randomCurr);
+				if(randomCurr != ""){
+					// console.log("after: " + randomCurr);
+					randomCombin += randomCurr;
+				}
+				else{
+					j--;
+				}
 			}
-			else{
-				j--;
+
+			console.log(randomCombin);
+			let count = 0;
+
+			function checkAll(){
+				for(let copyKey in random_library){
+					if(random_library[copyKey] == randomCombin){
+						console.log("repeated! " + randomCombin + " in " + copyKey);
+					}
+					else{
+						count++;
+					}
+				}
 			}
-			// console.log(randomCombin);
+			checkAll();
+			if(count == 26){
+				currCombin = randomCombin;
+				break;
+			}
 		}
 
-		if(random_library[key] != randomCombin){
-			if(random_library[key] == ""){
-				random_library[key] = randomCombin;
-			}
+		console.log(currCombin);
+		if(random_library[key] == ""){
+			random_library[key] = currCombin;
 		}
 	}
-
 	return random_library;
 }
 
