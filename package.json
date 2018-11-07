@@ -1,0 +1,19 @@
+{
+  "name": "baconian-cipher",
+  "version": "1.0.0",
+  "description": "From: [http://practicalcryptography.com/ciphers/classical-era/baconian/](http://practicalcryptography.com/ciphers/classical-era/baconian/)",
+  "main": "solution.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChloeLiang/baconian-cipher.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChloeLiang/baconian-cipher/issues"
+  },
+  "homepage": "https://github.com/ChloeLiang/baconian-cipher#readme"
+}
