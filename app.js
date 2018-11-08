@@ -18,12 +18,29 @@ const convertBase = function (number, base) {
 		output = (number % base) + output;
 	}
 
-		return output;
+	return output;
 }
 
 const baconCipher = function (string, length = 5, base = 2, cipher = alphaString) {
 
-	length = (length < 5 ? 5 : length);
+	base = (base < 2 ? 2 : base); // can't do anything below base 2
+	
+	var minLength = 1;
+	var minLengthBaseCalc = base;
+
+	// calculates minimum length varying on base
+	while (minLengthBaseCalc < 26) {
+		minLengthBaseCalc = minLengthBaseCalc * base;
+		minLength += 1;
+	}
+
+	// prevents cipher length from being not enough to reach the end of the alphabet
+	length = (length < minLength ? minLength : length); 
+
+	// defaults to alphabet if provided cipher is shorter than base
+	if (cipher.length < base) {
+		cipher = alphaString;
+	}
 
 	numberArray = [];
 
