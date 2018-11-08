@@ -4,8 +4,6 @@ const alphabet = alphaString.split('');
 const convertBase = function (number, base) {
 	output = "";
 
-	number -= 1; // for the baconCipher below as the arrays index from 0;
-
 	output += number % base;
 	number -= number % base;
 
