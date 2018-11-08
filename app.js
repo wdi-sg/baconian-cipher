@@ -1,6 +1,29 @@
-const alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+const alphaString = 'abcdefghijklmnopqrstuvwxyz';
+const alphabet = alphaString.split('');
 
-const baconCipher = function (string, length = 5, first = "a", second = "b") {
+const convertBase = function (number, base) {
+	output = "";
+
+	number -= 1; // for the baconCipher below as the arrays index from 0;
+
+	output += number % base;
+	number -= number % base;
+
+	while (number / base >= 1) {
+		number = number / base;
+
+		output = (number % base) + output;
+		number -= number % base;
+	}
+
+	if (number > 0) {
+		output = (number % base) + output;
+	}
+
+		return output;
+}
+
+const baconCipher = function (string, length = 5, base = 2, cipher = alphaString) {
 
 	length = (length < 5 ? 5 : length);
 
@@ -15,7 +38,7 @@ const baconCipher = function (string, length = 5, first = "a", second = "b") {
 	binaryArray = [];
 
 	for (let i in numberArray) {
-		binaryArray.push(numberArray[i].toString(2));
+		binaryArray.push(convertBase(numberArray[i], base));
 	}
 
 	console.log(binaryArray);
@@ -34,12 +57,10 @@ const baconCipher = function (string, length = 5, first = "a", second = "b") {
 
 	output = "";
 
+	cipher = cipher.split('');
+
 	for (let i in binaryString) {
-		if (binaryString[i] === "0") {
-			output += first;
-		} else {
-			output += second;
-		}
+		output += cipher[binaryString[i]]
 	}
 
 	console.log(output);
